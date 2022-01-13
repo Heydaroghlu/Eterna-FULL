@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Update";
+}
+@model Service
+<div class="container">
+    <form method="post" asp-action="update">
+        <div class="form-group">
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" class="form-control" placeholder="Enter email">
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Desc">Desc</label>
+            <input asp-for="Desc" class="form-control" placeholder="Enter email">
+            <span asp-validation-for="Desc"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Icon">Icon</label>
+            <input asp-for="Icon" class="form-control" placeholder="Enter email">
+            <span asp-validation-for="Icon"></span>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+@model List<Service>
+
+<div class="container">
+    <h2>Services</h2>
+    <a class="btn btn-primary" asp-action="create">Create</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                count++;
+            <tr>
+                <th scope="row">@count</th>
+                <td>@item.Name</td>
+                <td>@item.Desc</td>
+                <td>@item.Icon</td>
+                <td><a asp-action="delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>  <a asp-action="update" class="btn btn-success" asp-route-id="@item.Id">Update</a> </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
